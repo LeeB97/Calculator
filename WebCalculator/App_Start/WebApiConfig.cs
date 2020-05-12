@@ -22,7 +22,8 @@ namespace WebCalculator
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+				//se ha añadido action, ya que no reconocia la funcion en la ruta del cliente
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
