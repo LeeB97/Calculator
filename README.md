@@ -1,2 +1,2 @@
-# Calculator cliente-server
+# Calculator client-server
 In progress
