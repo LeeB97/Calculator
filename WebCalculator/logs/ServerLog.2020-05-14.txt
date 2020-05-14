@@ -1,0 +1,63 @@
+2020-05-14 12:46:13.2496 - Info: Received Multiply Request
+2020-05-14 12:46:13.2926 - Info: Processing Multiply Request
+2020-05-14 12:46:13.3076 - Info: Sending Add Response
+2020-05-14 13:00:07.9864 - Info: Received Add Request
+2020-05-14 13:00:08.0271 - Info: Processing Add Request
+2020-05-14 13:00:08.0271 - Info: Sending Add Response
+2020-05-14 13:02:05.2290 - Info: Received Add Request
+2020-05-14 13:02:05.2726 - Info: Processing Add Request
+2020-05-14 13:02:05.2886 - Info: Sending Add Response
+2020-05-14 13:03:11.3394 - Info: Received Add Request
+2020-05-14 13:03:11.3865 - Info: Processing Add Request
+2020-05-14 13:03:11.3865 - Info: Sending Add Response
+2020-05-14 13:06:17.0318 - Info: Received Add Request
+2020-05-14 13:06:17.0763 - Info: Processing Add Request
+2020-05-14 13:06:17.0763 - Info: Sending Add Response
+2020-05-14 15:03:10.4195 - Info: Received Add Request
+2020-05-14 15:03:10.4598 - Info: Header detected
+2020-05-14 15:03:10.4598 - Info: Processing Add Request
+2020-05-14 15:03:10.4768 - Info: Sending Add Response
+2020-05-14 15:06:10.0448 - Info: Received Add Request
+2020-05-14 15:06:10.0864 - Info: Header detected, Id: System.String[]
+2020-05-14 15:06:10.0864 - Info: Processing Add Request
+2020-05-14 15:06:10.1004 - Info: Sending Add Response
+2020-05-14 15:06:39.2369 - Info: Received Add Request
+2020-05-14 15:06:39.2874 - Info: Header detected, Id: System.String[]
+2020-05-14 15:06:39.3044 - Debug: Bad Add request: CalculatorModels.Requests+Add - Addends: System.Int32[]
+2020-05-14 15:09:04.8364 - Info: Received Add Request
+2020-05-14 15:09:04.8816 - Info: Header detected, Id: System.String[]
+2020-05-14 15:09:04.8976 - Info: Processing Add Request
+2020-05-14 15:09:04.8976 - Info: Sending Add Response
+2020-05-14 15:09:54.7450 - Info: Received Add Request
+2020-05-14 15:10:23.0026 - Info: Header detected, Id: System.String[]
+2020-05-14 15:10:23.0186 - Debug: Bad Add request: CalculatorModels.Requests+Add - Addends: System.Int32[]
+2020-05-14 15:15:00.3491 - Info: Received Add Request
+2020-05-14 15:18:08.5704 - Info: Received Add Request
+2020-05-14 15:18:08.6117 - Info: Processing Add Request
+2020-05-14 15:18:08.6197 - Info: Sending Add Response
+2020-05-14 15:18:37.2513 - Info: Received Add Request
+2020-05-14 15:18:37.2984 - Info: Header detected, Id: System.String[]
+2020-05-14 15:18:37.3094 - Info: Processing Add Request
+2020-05-14 15:18:37.3094 - Info: Sending Add Response
+2020-05-14 15:21:16.9115 - Info: Received Add Request
+2020-05-14 15:21:16.9558 - Info: Processing Add Request
+2020-05-14 15:21:16.9674 - Info: Sending Add Response
+2020-05-14 15:23:06.1106 - Info: Received Add Request
+2020-05-14 15:23:06.1520 - Info: Processing Add Request
+2020-05-14 15:23:06.1520 - Info: Sending Add Response
+2020-05-14 15:23:47.4709 - Info: Received Multiply Request
+2020-05-14 15:23:47.5160 - Info: Processing Multiply Request
+2020-05-14 15:23:47.5249 - Info: Sending Add Response
+2020-05-14 15:25:53.7034 - Info: Received Add Request
+2020-05-14 15:29:50.8080 - Info: Received Add Request
+2020-05-14 15:33:23.6590 - Info: Received Add Request
+2020-05-14 15:33:49.0545 - Info: Header detected, Id: manuel
+2020-05-14 15:33:53.0793 - Info: Processing Add Request
+2020-05-14 15:33:53.0893 - Info: Sending Add Response
+2020-05-14 15:34:30.9649 - Info: Received Add Request
+2020-05-14 15:37:23.2971 - Info: Header detected, Id: manuel
+2020-05-14 15:37:23.3371 - Info: Processing Add Request
+2020-05-14 15:37:23.3631 - Info: Sending Add Response
+2020-05-14 15:37:49.8470 - Info: Received Add Request
+2020-05-14 16:00:35.4914 - Info: Received Add Request
+2020-05-14 16:00:35.5465 - Debug: Bad Add request:  - Addends: 

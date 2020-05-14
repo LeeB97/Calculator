@@ -92,3 +92,4 @@ C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\WebC
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\WebCalculator\obj\Debug\CalculatorService.Server.csprojResolveAssemblyReference.cache
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\WebCalculator\obj\Debug\WebCalculator.dll
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\WebCalculator\obj\Debug\WebCalculator.pdb
+C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\WebCalculator\bin\NLog.config

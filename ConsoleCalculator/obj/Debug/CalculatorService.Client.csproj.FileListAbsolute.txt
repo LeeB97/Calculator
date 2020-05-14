@@ -8,3 +8,6 @@ C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\Cons
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\CalculatorService.Client.csprojResolveAssemblyReference.cache
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.exe
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.pdb
+C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\NLog.config
+C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\NLog.dll
+C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\NLog.xml

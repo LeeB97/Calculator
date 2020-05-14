@@ -1,0 +1,75 @@
+2020-05-14 13:03:05.3586 - Info: User wants to save the operation, Id: kadjfkad
+2020-05-14 13:03:06.1193 - Info: Add selected
+2020-05-14 13:03:08.1505 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 13:03:08.1873 - Info: Header added successfully
+2020-05-14 13:03:11.6263 - Info: Result: {"Sum":3}
+2020-05-14 13:05:48.4640 - Info: User wants to save the operation, Id: sdas
+2020-05-14 13:06:06.8485 - Info: Add selected
+2020-05-14 13:06:09.6068 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 13:06:09.6359 - Info: Header added successfully
+2020-05-14 13:06:17.3140 - Info: Result: {"Sum":3}
+2020-05-14 13:10:15.5832 - Info: User wants to save the operation, Id: asdas
+2020-05-14 15:02:59.3036 - Info: User wants to save the operation, Id: dasasda
+2020-05-14 15:03:00.5417 - Info: Add selected
+2020-05-14 15:03:02.7190 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 15:03:02.8101 - Info: Header added successfully
+2020-05-14 15:03:10.7166 - Info: Result: {"Sum":3}
+2020-05-14 15:05:58.1825 - Info: User wants to save the operation, Id: 13asda
+2020-05-14 15:05:59.5820 - Info: Add selected
+2020-05-14 15:06:02.3577 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 15:06:02.4319 - Info: Header added successfully
+2020-05-14 15:06:10.3795 - Info: Result: {"Sum":3}
+2020-05-14 15:06:27.0145 - Info: User wants to save the operation, Id: dasdas
+2020-05-14 15:06:30.5580 - Info: Add selected
+2020-05-14 15:06:35.9173 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 15:06:35.9557 - Info: Header added successfully
+2020-05-14 15:06:39.5974 - Info: Result: {"ErrorCode":"Bad Request","ErrorStatus":400,"ErrorMessage":"Request format error."}
+2020-05-14 15:08:52.3264 - Info: User wants to save the operation, Id: asdasda
+2020-05-14 15:08:54.1259 - Info: Add selected
+2020-05-14 15:08:56.5819 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 15:08:56.6209 - Info: Header added successfully
+2020-05-14 15:09:05.1447 - Info: Result: {"Sum":3}
+2020-05-14 15:09:49.6963 - Info: User wants to save the operation, Id: asdasda
+2020-05-14 15:09:50.6889 - Info: Add selected
+2020-05-14 15:09:51.4696 - Info: Preparing Add Request -> Addends: System.Int32[]
+2020-05-14 15:09:51.5026 - Info: Header added successfully
+2020-05-14 15:10:23.3177 - Info: Result: {"ErrorCode":"Bad Request","ErrorStatus":400,"ErrorMessage":"Request format error."}
+2020-05-14 15:14:18.6936 - Info: Add selected
+2020-05-14 15:14:57.1507 - Info: Preparing Add Request -> Addends: 1+2+3+4
+2020-05-14 15:15:28.9474 - Info: Result: {"Message":"An error has occurred.","ExceptionMessage":"No se encontró el encabezado especificado.","ExceptionType":"System.InvalidOperationException","StackTrace":"   en System.Net.Http.Headers.HttpHeaders.GetValues(String name)\r\n   en WebCalculator.Controllers.CalculatorController.add(Add request) en C:\\Users\\nrahman_evicertia\\Documents\\Visual Studio 2015\\Projects\\Calculator\\WebCalculator\\Controllers\\CalculatorController.cs:línea 36\r\n   en lambda_method(Closure , Object , Object[] )\r\n   en System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)\r\n   en System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)\r\n   en System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---\r\n   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   en System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()\r\n--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---\r\n   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   en System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()\r\n--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---\r\n   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   en System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()\r\n--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---\r\n   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   en System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()"}
+2020-05-14 15:17:56.5821 - Info: Add selected
+2020-05-14 15:18:00.5451 - Info: Preparing Add Request -> Addends: 1+2+3+4
+2020-05-14 15:18:08.8619 - Info: Result: {"Sum":10}
+2020-05-14 15:18:29.8941 - Info: User wants to save the operation, Id: asda
+2020-05-14 15:18:31.3741 - Info: Add selected
+2020-05-14 15:18:33.9248 - Info: Preparing Add Request -> Addends: 1+2+3
+2020-05-14 15:18:33.9781 - Info: Header added successfully
+2020-05-14 15:18:37.5526 - Info: Result: {"Sum":6}
+2020-05-14 15:21:09.8297 - Info: Add selected
+2020-05-14 15:21:13.4953 - Info: Preparing Add Request -> Addends: 1 + 2
+2020-05-14 15:21:17.2489 - Info: Result: {"Sum":3}
+2020-05-14 15:22:52.4478 - Info: Add selected
+2020-05-14 15:22:58.5901 - Info: Preparing Add Request -> Addends: 1 + 2 + 3
+2020-05-14 15:23:06.4415 - Info: Result: {"Sum":6}
+2020-05-14 15:23:38.3097 - Info: User wants to save the operation, Id: hola que tal
+2020-05-14 15:23:40.3415 - Info: Multiply selected
+2020-05-14 15:23:44.1664 - Info: Preparing Add Request -> Factors: 1 * 2 * 3 * 4
+2020-05-14 15:23:44.2074 - Info: Header added successfully
+2020-05-14 15:23:47.7939 - Info: Result: {"Product":24}
+2020-05-14 15:25:41.3979 - Info: User wants to save the operation, Id: sdasdas
+2020-05-14 15:25:42.0772 - Info: Add selected
+2020-05-14 15:25:43.5826 - Debug: Bad data input (not a number).
+2020-05-14 15:25:43.8448 - Debug: Bad data input (not a number).
+2020-05-14 15:25:45.5668 - Info: Preparing Add Request -> Addends: 1 + 2 + 3
+2020-05-14 15:25:45.6088 - Info: Header added successfully
+2020-05-14 15:33:12.4546 - Info: User wants to save the operation, Id: manuel
+2020-05-14 15:33:13.5091 - Info: Add selected
+2020-05-14 15:33:15.8095 - Info: Preparing Add Request -> Addends: 1 + 2 + 3
+2020-05-14 15:33:15.8598 - Info: Header added successfully
+2020-05-14 15:33:53.3513 - Info: Result: {"Sum":6}
+2020-05-14 15:34:24.4618 - Info: User wants to save the operation, Id: manuel
+2020-05-14 15:34:25.3173 - Info: Add selected
+2020-05-14 15:34:26.5893 - Debug: Bad data input (not a number).
+2020-05-14 15:34:27.8154 - Info: Preparing Add Request -> Addends: 1 + 2
+2020-05-14 15:34:27.8550 - Info: Header added successfully
+2020-05-14 15:36:11.8623 - Info: Result: 
