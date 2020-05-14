@@ -10,6 +10,6 @@ namespace WebCalculator.Controllers
 {
     public class JournalController : ApiController
     {
-		public static List<JournalResponse> JournalList = new List<JournalResponse>();
+		public static IEnumerable<JournalResponse> JournalList = new List<JournalResponse>();
 	}
 }

@@ -11,7 +11,7 @@ namespace CalculatorModels
 	public class JournalResponse
 	{
 		public string Id { get; set; }
-		public List<Registry> Operations = new List<Registry>();
+		public IEnumerable<Registry> Operations = new List<Registry>();
 	}
 
 	public class Registry

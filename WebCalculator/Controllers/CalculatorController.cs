@@ -48,8 +48,8 @@ namespace WebCalculator.Controllers
 				o.Operation = "Sum";
 				o.Date = DateTime.UtcNow;
 				o.Calculation = string.Join(" + ", request.Addends);
-				j.Operations.Add(o);
-				JournalController.JournalList.Add(j);
+				j.Operations.ToList().Add(o);
+				JournalController.JournalList.ToList().Add(j);
 			}
 
 			logger.Info("Sending Add Response");
