@@ -9,8 +9,8 @@
 
 		public class Sub : IRequest
 		{
-			public int Minuend { get; set; }
-			public int Subtrahend { get; set; }
+			public int? Minuend { get; set; }
+			public int? Subtrahend { get; set; }
 		}
 
 		public class Mult : IRequest
@@ -20,13 +20,13 @@
 
 		public class Div : IRequest
 		{
-			public int Dividend { get; set; }
-			public int Divisor { get; set; }
+			public int? Dividend { get; set; }
+			public int? Divisor { get; set; }
 		}
 
 		public class Sqrt : IRequest
 		{
-			public int Number { get; set; }
+			public int? Number { get; set; }
 		}
 	}
 }

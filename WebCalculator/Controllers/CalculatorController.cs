@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Web.Http;
-using System.Web.Http.Results;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using CalculatorModels;
 
 namespace WebCalculator.Controllers
@@ -21,66 +19,84 @@ namespace WebCalculator.Controllers
 		{
 			ErrorCode = "InternalError",
 			ErrorStatus = 500,
-			ErrorMessage = "Unable to process request: ..."
+			ErrorMessage = "Error at processing the request."
 		};
 
 		[HttpPost]
-		public JsonResult<string> add(Requests.Add request)
+		public IHttpActionResult add(Requests.Add request)
 		{
+			if (request == null || request.Addends == null || request.Addends.Length < 2)
+				return Content(HttpStatusCode.BadRequest, _400Error);
+
 			var response = new Responses.Add();
 			response.Sum = request.Addends.Sum();
 
-			return Json("{'Sum': " + response.Sum + "}");
+			if(response == null || response.Sum == null)
+				return Content(HttpStatusCode.InternalServerError, _500Error);
+
+			return Ok(response);
 		}
 
 		[HttpPost]
-		public JsonResult<string> subtract(Requests.Sub request)
+		public IHttpActionResult subtract(Requests.Sub request)
 		{
-
-			var ctx = new ValidationContext(request);
-			var errors = new List<ValidationResult>();
-			var isValid = Validator.TryValidateObject(request, ctx, errors, true);
-
-			if (!isValid)
-			{
-				throw new AggregateException(
-					errors.Select((e) => new ValidationException("error"))
-				);
-			}
+			if (request == null || request.Minuend == null || request.Subtrahend == null)
+					return Content(HttpStatusCode.BadRequest, _400Error);
 
 			var response = new Responses.Sub();
 			response.Difference = request.Minuend - request.Subtrahend;
 
-			return Json("exito");
+			if (response == null || response.Difference == null)
+				return Content(HttpStatusCode.InternalServerError, _500Error);
+
+			return Ok(response);
 		}
 
 		[HttpPost]
 		public IHttpActionResult multiply(Requests.Mult request)
 		{
-			var response = new Responses.Mult();
-			response.Product = request.Factors.Aggregate(1, (a, b) => a * b);
+			if (request == null || request.Factors == null || request.Factors.Length < 2)
+				return Content(HttpStatusCode.BadRequest, _400Error);
 
-			return Json(response);
+			var response = new Responses.Mult();
+			response.Product = request.Factors.Aggregate((a, b) => a * b);
+
+			if (response == null || response.Product == null)
+				return Content(HttpStatusCode.InternalServerError, _500Error);
+
+			return Ok(response);
 		}
 
 		[HttpPost]
 		public IHttpActionResult divide(Requests.Div request)
 		{
+			if (request == null || request.Dividend == null || request.Divisor == null)
+				return Content(HttpStatusCode.BadRequest, _400Error);
+
 			var response = new Responses.Div();
-			int remainder;
-			response.Quotient = Math.DivRem(request.Dividend, request.Divisor, out remainder);
+			var remainder = 0;
+			response.Quotient = Math.DivRem((int)request.Dividend, (int)request.Divisor, out remainder);
 			response.Remainder = remainder;
 
-			return Json(response);
+			if (response == null || response.Quotient == null || response.Remainder == null)
+				return Content(HttpStatusCode.InternalServerError, _500Error);
+
+			return Ok(response);
 		}
 
 		[HttpPost]
 		public IHttpActionResult squareRoot(Requests.Sqrt request)
 		{
+			if (request == null || request.Number == null)
+				return Content(HttpStatusCode.BadRequest, _400Error);
+
 			var response = new Responses.Sqrt();
 			response.Square = Math.Sqrt(Convert.ToDouble(request.Number));
 
-			return Json(response);
+			if (response == null || response.Square == null)
+				return Content(HttpStatusCode.InternalServerError, _500Error);
+
+			return Ok(response);
 		}
 	}
 }

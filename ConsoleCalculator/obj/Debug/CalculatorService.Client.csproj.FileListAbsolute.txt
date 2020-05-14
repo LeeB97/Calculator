@@ -1,10 +1,10 @@
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe.config
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.pdb
+C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\CalculatorModels.dll
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\RestSharp.dll
+C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\CalculatorModels.pdb
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\RestSharp.xml
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\CalculatorService.Client.csprojResolveAssemblyReference.cache
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.exe
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.pdb
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\CalculatorModels.dll
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\CalculatorModels.pdb

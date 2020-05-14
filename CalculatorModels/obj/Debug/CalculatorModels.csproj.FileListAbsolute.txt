@@ -2,4 +2,3 @@ C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\Calc
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\bin\Debug\CalculatorModels.pdb
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.dll
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.pdb
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.csprojResolveAssemblyReference.cache
