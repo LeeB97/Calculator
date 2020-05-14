@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculatorModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,5 +10,6 @@ namespace WebCalculator.Controllers
 {
     public class JournalController : ApiController
     {
-    }
+		public static List<JournalResponse> JournalList = new List<JournalResponse>();
+	}
 }

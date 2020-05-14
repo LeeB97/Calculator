@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using CalculatorModels;
+using System.Collections.Generic;
 
 namespace WebCalculator.Controllers
 {
@@ -35,12 +36,20 @@ namespace WebCalculator.Controllers
 				logger.Debug($"Internal error: request: {response} - Sum: {response?.Sum}");
 				return Content(HttpStatusCode.InternalServerError, error.get500());
 			}
-			
+
 			if (Request.Headers.Contains(HeaderName))
 			{
 				var headerValue = Request.Headers.GetValues(HeaderName).First();
 				logger.Info("Header detected, Id: " + headerValue);
 
+				var j = new JournalResponse();
+				j.Id = headerValue;
+				var o = new Registry();
+				o.Operation = "Sum";
+				o.Date = DateTime.UtcNow;
+				o.Calculation = string.Join(" + ", request.Addends);
+				j.Operations.Add(o);
+				JournalController.JournalList.Add(j);
 			}
 
 			logger.Info("Sending Add Response");

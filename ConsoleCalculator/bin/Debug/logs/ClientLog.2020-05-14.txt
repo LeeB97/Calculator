@@ -73,3 +73,15 @@
 2020-05-14 15:34:27.8154 - Info: Preparing Add Request -> Addends: 1 + 2
 2020-05-14 15:34:27.8550 - Info: Header added successfully
 2020-05-14 15:36:11.8623 - Info: Result: 
+2020-05-14 17:30:46.1948 - Info: User wants to save the operation, Id: sigueme
+2020-05-14 17:30:48.7146 - Info: Add selected
+2020-05-14 17:30:51.5875 - Info: Preparing Add Request -> Addends: 1 + 2 + 3 + 4
+2020-05-14 17:30:51.7685 - Info: Header added successfully
+2020-05-14 17:36:21.9859 - Info: User wants to save the operation, Id: sigueme
+2020-05-14 17:36:31.0895 - Info: Add selected
+2020-05-14 17:36:37.0425 - Info: Preparing Add Request -> Addends: 12 + 3 + 2
+2020-05-14 17:36:37.1300 - Info: Header added successfully
+2020-05-14 17:39:45.7852 - Info: User wants to save the operation, Id: sigueme
+2020-05-14 17:39:47.5852 - Info: Add selected
+2020-05-14 17:39:50.1782 - Info: Preparing Add Request -> Addends: 1 + 2
+2020-05-14 17:39:50.2434 - Info: Header added successfully

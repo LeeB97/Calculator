@@ -8,7 +8,7 @@
 			{
 				ErrorCode = "InternalError",
 				ErrorStatus = 400,
-				ErrorMessage = "Bad request, wrong information."
+				ErrorMessage = "Unable to process request: ..."
 			};
 		}
 
@@ -18,7 +18,7 @@
 			{
 				ErrorCode = "InternalError",
 				ErrorStatus = 500,
-				ErrorMessage = "An unexpected error condition was triggered which made impossible to fulfill the request."
+				ErrorMessage = "An unexpected error condition was triggered which made impossible to fulfill the request. Please try again or contact support."
 			};
 		}
 	}

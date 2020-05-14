@@ -61,3 +61,12 @@
 2020-05-14 15:37:49.8470 - Info: Received Add Request
 2020-05-14 16:00:35.4914 - Info: Received Add Request
 2020-05-14 16:00:35.5465 - Debug: Bad Add request:  - Addends: 
+2020-05-14 17:30:59.5138 - Info: Received Add Request
+2020-05-14 17:30:59.5563 - Info: Processing Add Request
+2020-05-14 17:30:59.5563 - Info: Header detected, Id: sigueme
+2020-05-14 17:36:44.7705 - Info: Received Add Request
+2020-05-14 17:36:44.8095 - Info: Processing Add Request
+2020-05-14 17:36:44.8195 - Info: Header detected, Id: sigueme
+2020-05-14 17:39:57.8834 - Info: Received Add Request
+2020-05-14 17:39:57.9294 - Info: Processing Add Request
+2020-05-14 17:39:57.9294 - Info: Header detected, Id: sigueme
