@@ -1,8 +1,0 @@
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe.config
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.pdb
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\RestSharp.dll
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\RestSharp.xml
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.exe
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.pdb
-c:\users\nrahman_evicertia\documents\visual studio 2015\Projects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.csprojResolveAssemblyReference.cache

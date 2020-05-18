@@ -1,8 +1,0 @@
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\bin\Debug\CalculatorModels.dll
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\bin\Debug\CalculatorModels.pdb
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.dll
-C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.pdb
-D:\Biblioteca\Documentos\Proyects\Calculator\CalculatorModels\bin\Debug\CalculatorModels.dll
-D:\Biblioteca\Documentos\Proyects\Calculator\CalculatorModels\bin\Debug\CalculatorModels.pdb
-D:\Biblioteca\Documentos\Proyects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.dll
-D:\Biblioteca\Documentos\Proyects\Calculator\CalculatorModels\obj\Debug\CalculatorModels.pdb
