@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using CalculatorModels;
-using System.Collections.Generic;
+using WebCalculator.Models;
 
 namespace WebCalculator.Controllers
 {
@@ -12,7 +12,6 @@ namespace WebCalculator.Controllers
 		#region privates
 		private const string HeaderName = "X-Evi-Tracking-Id";
 		private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger(); // longs in: \logs
-		private readonly ErrorList error = new ErrorList();
 		#endregion
 
 		#region requests
@@ -20,37 +19,33 @@ namespace WebCalculator.Controllers
 		public IHttpActionResult add(Requests.Add request)
 		{
 			logger.Info("Received Add Request");
-			
-			if (request == null || request.Addends == null || request.Addends.Length < 2)
+
+            //Request error
+            if (request == null || request.Addends == null || request.Addends.Length < 2)
 			{
 				logger.Debug($"Bad Add request: {request} - Addends: {request?.Addends}");
-				return Content(HttpStatusCode.BadRequest, error.get400());
+				return Content(HttpStatusCode.BadRequest, ErrorList.e400);
 			}
 
 			logger.Info("Processing Add Request");
 			var response = new Responses.Add();
 			response.Sum = request.Addends.Sum();
 
-			if (response == null || response.Sum == null)
+            //Saving data if there is an ID
+            if (chekTrackingId() != null)
+            {
+                var Calculation = string.Join(" + ", request.Addends) + $" = {response.Sum}";
+                storageOperation("Add", Calculation);
+            }
+
+            //Server error
+            if (response == null || response.Sum == null)
 			{
 				logger.Debug($"Internal error: request: {response} - Sum: {response?.Sum}");
-				return Content(HttpStatusCode.InternalServerError, error.get500());
+				return Content(HttpStatusCode.InternalServerError, ErrorList.e500);
 			}
 
-			if (Request.Headers.Contains(HeaderName))
-			{
-				var headerValue = Request.Headers.GetValues(HeaderName).First();
-				logger.Info("Header detected, Id: " + headerValue);
-
-				var j = new JournalResponse();
-				j.Id = headerValue;
-				var o = new Registry();
-				o.Operation = "Sum";
-				o.Date = DateTime.UtcNow;
-				o.Calculation = string.Join(" + ", request.Addends);
-				j.Operations.ToList().Add(o);
-				JournalController.JournalList.ToList().Add(j);
-			}
+			
 
 			logger.Info("Sending Add Response");
 
@@ -64,18 +59,24 @@ namespace WebCalculator.Controllers
 
 			if (request == null || request.Minuend == null || request.Subtrahend == null)
 			{
-				logger.Debug($"Bad Subtract request: {request} - Minuend: {request?.Minuend}, Subtrahend: {request.Subtrahend}");
-				return Content(HttpStatusCode.BadRequest, error.get400());
+				logger.Debug($"Bad Subtract request: {request} - Minuend: {request?.Minuend}, Subtrahend: {request?.Subtrahend}");
+				return Content(HttpStatusCode.BadRequest, ErrorList.e400);
 			}
 
 			logger.Info("Processing Subtract Request");
 			var response = new Responses.Sub();
 			response.Difference = request.Minuend - request.Subtrahend;
 
-			if (response == null || response.Difference == null)
+            if (chekTrackingId() != null)
+            {
+                var Calculation = $"{request.Minuend} - {request.Subtrahend} = {response.Difference}";
+                storageOperation("Subtract", Calculation);
+            }
+
+            if (response == null || response.Difference == null)
 			{
 				logger.Debug($"Internal error: request: {response} - Difference: {response?.Difference}");
-				return Content(HttpStatusCode.InternalServerError, error.get500());
+				return Content(HttpStatusCode.InternalServerError, ErrorList.e500);
 			}
 
 			logger.Info("Sending Subtract Response");
@@ -91,17 +92,23 @@ namespace WebCalculator.Controllers
 			if (request == null || request.Factors == null || request.Factors.Length < 2)
 			{
 				logger.Debug($"Bad Multiply request: {request} - Factors: {request?.Factors}");
-				return Content(HttpStatusCode.BadRequest, error.get400());
+				return Content(HttpStatusCode.BadRequest, ErrorList.e400);
 			}
 
 			logger.Info("Processing Multiply Request");
 			var response = new Responses.Mult();
 			response.Product = request.Factors.Aggregate((a, b) => a * b);
 
-			if (response == null || response.Product == null)
+            if (chekTrackingId() != null)
+            {
+                var Calculation = string.Join(" * ", request.Factors) + $" = {response.Product}";
+                storageOperation("Multiply", Calculation);
+            }
+
+            if (response == null || response.Product == null)
 			{
 				logger.Debug($"Internal error: request: {response} - Factors: {response?.Product}");
-				return Content(HttpStatusCode.InternalServerError, error.get500());
+				return Content(HttpStatusCode.InternalServerError, ErrorList.e500);
 			}
 
 			logger.Info("Sending Multiply Response");
@@ -117,7 +124,7 @@ namespace WebCalculator.Controllers
 			if (request == null || request.Dividend == null || request.Divisor == null)
 			{
 				logger.Debug($"Bad Divide request: {request} - Dividend: {request?.Dividend}, Divisor: {request.Divisor}");
-				return Content(HttpStatusCode.BadRequest, error.get400());
+				return Content(HttpStatusCode.BadRequest, ErrorList.e400);
 			}
 
 			logger.Info("Processing Divide Request");
@@ -126,10 +133,16 @@ namespace WebCalculator.Controllers
 			response.Quotient = Math.DivRem((int)request.Dividend, (int)request.Divisor, out remainder);
 			response.Remainder = remainder;
 
-			if (response == null || response.Quotient == null || response.Remainder == null)
+            if (chekTrackingId() != null)
+            {
+                var Calculation = $"{request.Dividend} / {request.Divisor} = {response.Quotient}, Remainder: {response.Remainder}";
+                storageOperation("Divide", Calculation);
+            }
+
+            if (response == null || response.Quotient == null || response.Remainder == null)
 			{
 				logger.Debug($"Internal error: request: {response} - Quotient: {response?.Quotient}, Remainder: {response?.Remainder}");
-				return Content(HttpStatusCode.InternalServerError, error.get500());
+				return Content(HttpStatusCode.InternalServerError, ErrorList.e500);
 			}
 
 			logger.Info("Sending Divide Response");
@@ -145,23 +158,59 @@ namespace WebCalculator.Controllers
 			if (request == null || request.Number == null)
 			{
 				logger.Debug($"Bad Square Root request: {request} - Number: {request?.Number}");
-				return Content(HttpStatusCode.BadRequest, error.get400());
+				return Content(HttpStatusCode.BadRequest, ErrorList.e400);
 			}
 
 			logger.Info("Processing Square Root Request");
 			var response = new Responses.Sqrt();
 			response.Square = Math.Sqrt(Convert.ToDouble(request.Number));
 
-			if (response == null || response.Square == null)
+            if (chekTrackingId() != null)
+            {
+                var Calculation = $"√{request.Number} = {response.Square}";
+                storageOperation("Square Root", Calculation);
+            }
+
+            if (response == null || response.Square == null)
 			{
 				logger.Debug($"Internal error: request: {response} - Square: {response?.Square}");
-				return Content(HttpStatusCode.InternalServerError, error.get500());
+				return Content(HttpStatusCode.InternalServerError, ErrorList.e500);
 			}
 
 			logger.Info("Sending Square Root Response");
 
 			return Ok(response);
 		}
-		#endregion
-	}
+        #endregion
+
+        #region Functions
+        public string chekTrackingId(string HeaderTracking = HeaderName)
+        {
+            if (Request.Headers.Contains(HeaderTracking))
+            {
+                var headerValue = Request.Headers.GetValues(HeaderTracking).First();
+                logger.Info("Header detected, Id: " + headerValue);
+
+                return headerValue;
+            }
+
+            return null;
+        }
+
+        public void storageOperation(string Operation, string Calculation)
+        {
+            var headerValue = chekTrackingId();
+
+            if (headerValue != null)
+            {
+                if (RegistryData.byId(headerValue) == null)
+                {
+                    RegistryData.addRegistry(headerValue);
+                }
+
+                RegistryData.addOperation(headerValue, Operation, Calculation);
+            }
+        }
+        #endregion
+    }
 }

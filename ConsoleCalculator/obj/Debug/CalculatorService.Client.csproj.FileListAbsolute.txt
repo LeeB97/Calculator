@@ -11,3 +11,16 @@ C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\Cons
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\NLog.config
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\NLog.dll
 C:\Users\nrahman_evicertia\Documents\Visual Studio 2015\Projects\Calculator\ConsoleCalculator\bin\Debug\NLog.xml
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe.config
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.exe
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.pdb
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\obj\Debug\CalculatorService.Client.csprojResolveAssemblyReference.cache
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\NLog.config
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.pdb
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\CalculatorModels.dll
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\NLog.dll
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\RestSharp.dll
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\CalculatorModels.pdb
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\NLog.xml
+D:\Biblioteca\Documentos\Proyects\Calculator\ConsoleCalculator\bin\Debug\RestSharp.xml

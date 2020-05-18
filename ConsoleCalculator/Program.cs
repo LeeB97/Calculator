@@ -1,10 +1,8 @@
 ﻿using System;
 using RestSharp;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CalculatorModels;
+using System.ComponentModel;
 
 namespace ConsoleCalculator
 {
@@ -17,8 +15,8 @@ namespace ConsoleCalculator
 		private static string UserInputId;
 		private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger(); // longs in: \bin\Debug\logs
 
-		#region asks and gets
-		public static void askTrackingId()
+        #region asks and gets
+        private static void askTrackingId()
 		{ //Ask user if he wants to save the operation
 			Console.WriteLine("Do you want to save the operation? [Y/N] ");
 			string YNResponse = Console.ReadLine();
@@ -31,45 +29,64 @@ namespace ConsoleCalculator
 			}
 		}
 
-		public static void askOptions()
+		private static void askOptions()
 		{
 			Console.WriteLine(
 				"\nChoose one of the following options:\n" +
-				"a - Add\n" +
-				"s - Subtract\n" +
-				"m - Multiply\n" +
-				"d - Divide\n" +
-				"S - Square root\n");
+				"1 - Add\n" +
+				"2 - Subtract\n" +
+				"3 - Multiply\n" +
+				"4 - Divide\n" +
+				"5 - Square root\n" +
+                "6 - History\n" +
+                "7 - Exit");
 
-			switch (Console.ReadLine())
+            var option = Console.ReadLine();
+
+            switch (option.ToLower())
 			{
-				case "a":
+                case "1":
+                case "add":
 					logger.Info("Add selected");
 					prepareAdd();
 					break;
-				case "s":
-					logger.Info("Subtract selected");
+				case "2":
+                case "subtract":
+                    logger.Info("Subtract selected");
 					prepareSubtract();
 					break;
-				case "m":
-					logger.Info("Multiply selected");
+				case "3":
+                case "multiply":
+                    logger.Info("Multiply selected");
 					prepareMultiply();
 					break;
-				case "d":
-					logger.Info("Divide selected");
+				case "4":
+                case "divide":
+                    logger.Info("Divide selected");
 					prepareDivide();
 					break;
-				case "S":
-					logger.Info("Square Root selected");
+				case "5":
+                case "square":
+                case "square root":
+                    logger.Info("Square Root selected");
 					prepareSquareRoot();
 					break;
-				default:
+                case "6":
+                case "history":
+                    checkHistory();
+                    break;
+                case "7":
+                case "exit":
+                    return;
+                default:
 					Console.WriteLine("\nThis option does not exist. Press any key to Restart the application.");
 					logger.Debug("Wrong key in  operation type.");
 					askOptions();
 					break;
 			}
-		}
+
+            askOptions();
+        }
 
 		public static int askNumber(string message, int? counter = null)
 		{
@@ -105,16 +122,16 @@ namespace ConsoleCalculator
 		#endregion
 
 		#region Prepares
-		public static void prepareAdd()
+		private static void prepareAdd()
 		{
 			data = new Requests.Add();
 			(data as Requests.Add).Addends = getNumbers(askNumber("How many numbers would you like to use?"));
 			logger.Info("Preparing Add Request -> Addends: " + string.Join(" + ", (data as Requests.Add).Addends));
 
-			doRequest(URI, "add", data);
+			doRequest("calculator", "add", data);
 		}
 
-		public static void prepareSubtract()
+		private static void prepareSubtract()
 		{
 			data = new Requests.Sub();
 			var numbers = getNumbers(2);
@@ -122,19 +139,19 @@ namespace ConsoleCalculator
 			(data as Requests.Sub).Subtrahend = numbers[1];
 			logger.Info($"Preparing Subtract Request -> Minuend: {(data as Requests.Sub).Minuend}, Subtrahend: {(data as Requests.Sub).Subtrahend}");
 
-			doRequest(URI, "subtract", data);
+			doRequest("calculator", "subtract", data);
 		}
 
-		public static void prepareMultiply()
+		private static void prepareMultiply()
 		{
 			data = new Requests.Mult();
 			(data as Requests.Mult).Factors = getNumbers(askNumber("How many numbers would you like to use?"));
 			logger.Info("Preparing Add Request -> Factors: " + string.Join(" * ", (data as Requests.Mult).Factors));
 
-			doRequest(URI, "multiply", data);
+			doRequest("calculator", "multiply", data);
 		}
 
-		public static void prepareDivide()
+		private static void prepareDivide()
 		{
 			data = new Requests.Div();
 			var numbers = getNumbers(2);
@@ -142,24 +159,47 @@ namespace ConsoleCalculator
 			(data as Requests.Div).Divisor = numbers[1];
 			logger.Info($"Preparing Divide Request -> Dividend: {(data as Requests.Div).Dividend}, Divisor: {(data as Requests.Div).Divisor}");
 
-			doRequest(URI, "divide", data);
+			doRequest("calculator", "divide", data);
 		}
 
-		public static void prepareSquareRoot()
+		private static void prepareSquareRoot()
 		{
 			data = new Requests.Sqrt();
 			var numbers = getNumbers(1);
 			(data as Requests.Sqrt).Number = numbers[0];
 			logger.Info($"Preparing Square Root Request -> Number: {(data as Requests.Sqrt).Number}");
 
-			doRequest(URI, "squareRoot", data);
+			doRequest("calculator", "squareRoot", data);
 		}
-		#endregion
 
-		public static void doRequest(Uri URI, string type, IRequest data)
+        private static void checkHistory()
+        {
+            var request = new JournalRequest();
+            request.Id = UserInputId;
+
+            if (string.IsNullOrEmpty(UserInputId))
+            {
+                Console.Write("\nID: ");
+                request.Id = Console.ReadLine().Trim();
+            }
+
+            doRequest("journal", "query", request);
+            
+        }
+        #endregion
+
+        private static void printResponse(IResponse response)
+        {
+            foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(response))
+                Console.Write($"\n {descriptor.Name} = {descriptor.GetValue(response)}");
+
+            Console.WriteLine();
+        }
+
+        public static void doRequest(string controller, string type, IRequest data)
 		{
 			var client = new RestClient(URI);
-			var request = new RestRequest($"/api/calculator/{type}", Method.POST);
+			var request = new RestRequest($"/api/{controller}/{type}", Method.POST);
 			request.RequestFormat = DataFormat.Json;
 			request.AddJsonBody(data);
 
@@ -169,19 +209,17 @@ namespace ConsoleCalculator
 				request.AddHeader(Header, UserInputId);
 			}
 
-			//executing and waiting response
-			Console.WriteLine("\nProcessing information...");
-			var response = client.Execute(request);
+            var response = client.Execute(request);
+            logger.Debug($"Response from '{URI}/api/{controller}{type}': {response.IsSuccessful}.");
 
-			logger.Info($"Result: {response.Content}");
-			Console.WriteLine($"\nResult: {response.Content}");
-			Console.ReadKey();
-		}
-		
-		public static void Main(string[] args)
+
+            Console.WriteLine($"\nResult: {response.Content}");
+        }
+
+        public static void Main(string[] args)
 		{
 			askTrackingId();
-			askOptions();
+            askOptions();
 		}
 
 	}

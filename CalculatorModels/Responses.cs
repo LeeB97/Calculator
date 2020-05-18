@@ -28,7 +28,7 @@
 			public double? Square { get; set; }
 		}
 
-		public class Error
+		public class Error : IResponse
 		{
 			public string ErrorCode { get; set; }
 			public int ErrorStatus { get; set; }
